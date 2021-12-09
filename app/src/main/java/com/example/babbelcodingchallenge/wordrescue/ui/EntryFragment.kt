@@ -1,13 +1,12 @@
-package com.example.babbelcodingchallenge.wordrescue.ui.entry
+package com.example.babbelcodingchallenge.wordrescue.ui
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.example.babbelcodingchallenge.R
 import com.example.babbelcodingchallenge.databinding.EntryFragmentBinding
 import com.example.babbelcodingchallenge.wordrescue.viewmodel.EntryViewModel
@@ -17,7 +16,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class EntryFragment : Fragment() {
     private val entryViewModel: EntryViewModel by viewModel()
     private lateinit var binding: EntryFragmentBinding
-    private lateinit var viewModel: EntryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,10 +35,14 @@ class EntryFragment : Fragment() {
 
     private fun setObserver() {
         entryViewModel.wordDataResponseLiveData.observe(viewLifecycleOwner) {
-            if (it.errorString.isEmpty()) {
-                Log.ERROR
+            val response = it.getContentIfNotHandled()
+            if (response != null) if (response.errorString.isNotEmpty()) {
+                // TODO: Showerrror
             } else {
-                // Start next fragment
+                view?.let { view ->
+                    Navigation.findNavController(view)
+                        .navigate(R.id.action_entryFragment_to_gamePlayFragment)
+                }
             }
         }
     }

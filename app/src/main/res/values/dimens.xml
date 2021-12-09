@@ -4,4 +4,6 @@
     <dimen name="margin_start_text_description">40dp</dimen>
     <dimen name="margin_top_text_description">20dp</dimen>
     <dimen name="text_size_30">30sp</dimen>
+    <dimen name="margin_button_game">20dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
 </resources>

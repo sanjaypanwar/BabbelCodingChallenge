@@ -5,4 +5,8 @@
     <string name="text_game_desc">Stop the word from falling to the ground, by choosing the correct option.\n\nIf the translation of word shown is matched with the falling word, select option \'Correct\' otherwise \'Wrong\'.</string>
     <string name="correct">Correct</string>
     <string name="wrong">Wrong</string>
+    <string name="score">SCORE</string>
+    <string name="your_best">YOUR BEST</string>
+    <string name="play_again">PLAY AGAIN</string>
+    <string name="exit">EXIT</string>
 </resources>

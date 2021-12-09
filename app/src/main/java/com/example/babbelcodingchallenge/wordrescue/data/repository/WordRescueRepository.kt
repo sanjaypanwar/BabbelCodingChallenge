@@ -19,7 +19,7 @@ class WordRescueRepository(private val localWordDataProvider: LocalWordDataProvi
 
     private fun convertToMap(wordList: List<WordData>): Map<String, String> {
         val map = mutableMapOf<String, String>()
-        wordList.forEach() {
+        wordList.forEach {
             map[it.text_eng] = it.text_spa
         }
         return map

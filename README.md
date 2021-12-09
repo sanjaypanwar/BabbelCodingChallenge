@@ -32,3 +32,9 @@ reaches the bottom of the screen.
 - **Entry Screen** : To give details about the game and entry point for the game
 - **Game Screen** : Main screen for game , where user interacts to play the word game
 - **Final Screen** : To give breif about the score after game finished.
+
+# Other class added:
+- **WordRescueModule** class to provide dependencies for repository and localdataprovider objects
+- **CheckoutVIewModelModule** to provide the viewmodel dependencies.
+- **CustomApplication** : Application class to initialize and start KOIN di.
+

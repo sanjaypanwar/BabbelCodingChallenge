@@ -7,7 +7,25 @@
 
     <fragment
         android:id="@+id/entryFragment"
-        android:name="com.example.babbelcodingchallenge.wordrescue.ui.entry.EntryFragment"
+        android:name="com.example.babbelcodingchallenge.wordrescue.ui.EntryFragment"
         tools:layout="@layout/entry_fragment"
-        android:label="EntryFragment" />
+        android:label="EntryFragment" >
+        <action
+            android:id="@+id/action_entryFragment_to_gamePlayFragment"
+            app:destination="@id/gamePlayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gamePlayFragment"
+        android:name="com.example.babbelcodingchallenge.wordrescue.ui.GamePlayFragment"
+        tools:layout="@layout/game_play_fragment"
+        android:label="GamePlayFragment" >
+        <action
+            android:id="@+id/action_gamePlayFragment_to_finalScoreFragment"
+            app:popUpTo="@id/entryFragment"
+            app:destination="@id/finalScoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalScoreFragment"
+        android:name="com.example.babbelcodingchallenge.wordrescue.ui.FinalScoreFragment"
+        android:label="FinalScoreFragment" />
 </navigation>

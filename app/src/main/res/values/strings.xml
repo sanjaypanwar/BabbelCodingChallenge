@@ -3,4 +3,6 @@
     <string name="word_rescue">Word Rescue</string>
     <string name="start_game">Start game</string>
     <string name="text_game_desc">Stop the word from falling to the ground, by choosing the correct option.\n\nIf the translation of word shown is matched with the falling word, select option \'Correct\' otherwise \'Wrong\'.</string>
+    <string name="correct">Correct</string>
+    <string name="wrong">Wrong</string>
 </resources>

@@ -5,8 +5,9 @@ import com.example.babbelcodingchallenge.wordrescue.model.WordData
 import com.example.babbelcodingchallenge.wordrescue.model.WordDataResponse
 
 class WordRescueRepository(private val localWordDataProvider: LocalWordDataProvider) {
-    private lateinit var wordMap: Map<String, String>
-    private lateinit var wordList: List<WordData>
+    lateinit var wordMap: Map<String, String>
+    lateinit var wordList: List<WordData>
+    var highestScore = 0
     suspend fun getWordsData(): WordDataResponse {
         val response = localWordDataProvider.getWordsData()
         if (response.wordDataList.isNotEmpty()) {
@@ -17,8 +18,8 @@ class WordRescueRepository(private val localWordDataProvider: LocalWordDataProvi
     }
 
     private fun convertToMap(wordList: List<WordData>): Map<String, String> {
-        val map = mutableMapOf<String,String>()
-        wordList.forEach(){
+        val map = mutableMapOf<String, String>()
+        wordList.forEach() {
             map[it.text_eng] = it.text_spa
         }
         return map

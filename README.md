@@ -38,3 +38,5 @@ reaches the bottom of the screen.
 - **CheckoutVIewModelModule** to provide the viewmodel dependencies.
 - **CustomApplication** : Application class to initialize and start KOIN di.
 
+# Unit test case:
+Added one test case EntryViewModelTest using mockk.

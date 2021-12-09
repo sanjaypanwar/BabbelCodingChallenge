@@ -27,5 +27,14 @@
     <fragment
         android:id="@+id/finalScoreFragment"
         android:name="com.example.babbelcodingchallenge.wordrescue.ui.FinalScoreFragment"
-        android:label="FinalScoreFragment" />
+        android:label="FinalScoreFragment" >
+        <argument
+            android:name="finalScore"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_finalScoreFragment_to_gamePlayFragment"
+            app:popUpTo="@id/entryFragment"
+            app:destination="@id/gamePlayFragment" />
+    </fragment>
 </navigation>

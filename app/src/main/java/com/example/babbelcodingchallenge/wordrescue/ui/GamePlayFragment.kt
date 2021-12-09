@@ -70,9 +70,11 @@ class GamePlayFragment : Fragment(), Animator.AnimatorListener {
         }
 
         gamePlayViewModel.recentScoreLiveData.observe(viewLifecycleOwner) {
+            val argsToPass = Bundle()
+            argsToPass.putInt("finalScore", gamePlayViewModel.currentScore)
             view?.let { view ->
                 Navigation.findNavController(view)
-                    .navigate(R.id.action_gamePlayFragment_to_finalScoreFragment)
+                    .navigate(R.id.action_gamePlayFragment_to_finalScoreFragment, argsToPass)
             }
         }
     }

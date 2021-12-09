@@ -5,7 +5,6 @@ import com.example.babbelcodingchallenge.wordrescue.data.api.LocalWordDataProvid
 import com.example.babbelcodingchallenge.wordrescue.data.repository.WordRescueRepository
 import org.koin.dsl.module
 
-private const val BASE_URL = "https://api.sumup.com/v0.1/"
 
 val wordRescueModule = module {
     single { provideWordDataProvider(get()) }

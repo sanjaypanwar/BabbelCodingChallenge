@@ -36,9 +36,7 @@ class EntryFragment : Fragment() {
     private fun setObserver() {
         entryViewModel.wordDataResponseLiveData.observe(viewLifecycleOwner) {
             val response = it.getContentIfNotHandled()
-            if (response != null) if (response.errorString.isNotEmpty()) {
-                // TODO: Showerrror
-            } else {
+            if (response != null) if (response.errorString.isEmpty()) {
                 view?.let { view ->
                     Navigation.findNavController(view)
                         .navigate(R.id.action_entryFragment_to_gamePlayFragment)
